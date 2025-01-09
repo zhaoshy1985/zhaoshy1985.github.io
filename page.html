@@ -15,8 +15,17 @@
       <div id="logo">
         <div id="logo_text">
           <!-- class="logo_colour", allows you to change the colour of the text -->
-          <h1><a href="index.html">Shuyun <span class="logo_colour">Zhao</span></a></h1>
-	  <!<h2>zhaosy@cug.edu.cn</h2>>
+          <div id="insert-h1-content"></div>
+
+          <script>
+              // 使用 fetch 加载 h1.html 并将其插入到 #insert-h1-content 中
+              fetch('head.html')
+                  .then(response => response.text())
+                  .then(data => {
+                      document.getElementById('insert-h1-content').innerHTML = data;
+                  })
+                  .catch(error => console.error('Error loading h1.html:', error));
+          </script>
         </div>
       </div>
       <div id="menubar">
